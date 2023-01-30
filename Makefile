@@ -6,7 +6,7 @@
 #    By: nradin <nradin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 13:37:00 by nradin            #+#    #+#              #
-#    Updated: 2023/01/24 19:16:28 by nradin           ###   ########.fr        #
+#    Updated: 2023/01/25 12:46:36 by nradin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = 	push_swap.c					\
 
 SRC_MAIN = 	main.c
 
-SRCS_BONUS = 	checker.c	\
+SRCS_BONUS = 	checker.c
 
 NAME = push_swap
 BONUS = checker

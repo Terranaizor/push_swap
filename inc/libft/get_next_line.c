@@ -6,7 +6,7 @@
 /*   By: nradin <nradin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 12:44:50 by nradin            #+#    #+#             */
-/*   Updated: 2023/01/23 20:41:12 by nradin           ###   ########.fr       */
+/*   Updated: 2023/01/25 12:44:07 by nradin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strjoin_free(char *s1, char *s2)
 	char	*res;
 
 	if (s1 == NULL)
-		res = ft_strjoin("", s2);
+		res = ft_strjoin_gnl("", s2);
 	else
 	{
-		res = ft_strjoin(s1, s2);
+		res = ft_strjoin_gnl(s1, s2);
 		free(s1);
 	}
 	return (res);
@@ -39,7 +39,7 @@ char	*ft_trim_start(char *str)
 		free(str);
 		return (NULL);
 	}
-	t = ft_substr(str, i + 1, ft_strlen(str) - i - 1);
+	t = ft_substr_gnl(str, i + 1, ft_strlen_gnl(str) - i - 1);
 	free(str);
 	return (t);
 }
@@ -52,7 +52,7 @@ char	*ft_trim_end(char *str)
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
-	t = ft_substr(str, 0, i + 1);
+	t = ft_substr_gnl(str, 0, i + 1);
 	return (t);
 }
 
@@ -74,7 +74,7 @@ char	*read_from_file(int fd, char *res)
 		}
 		buf[byte_read] = 0;
 		res = ft_strjoin_free(res, buf);
-		if (ft_strrchr(buf, '\n'))
+		if (ft_strrchr_gnl(buf, '\n'))
 			break ;
 		byte_read = read(fd, buf, BUFFER_SIZE);
 	}
@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 		buf[fd] = NULL;
 		return (NULL);
 	}
-	if (!ft_strrchr(buf[fd], '\n'))
+	if (!ft_strrchr_gnl(buf[fd], '\n'))
 		buf[fd] = read_from_file(fd, buf[fd]);
 	if (!buf[fd])
 		return (NULL);

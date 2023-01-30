@@ -6,7 +6,7 @@
 /*   By: nradin <nradin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:04:14 by nradin            #+#    #+#             */
-/*   Updated: 2023/01/21 14:45:42 by nradin           ###   ########.fr       */
+/*   Updated: 2023/01/25 13:29:07 by nradin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	ft_stack_lowest_value(t_stack	*a)
 	return (low);
 }
 
-//delete later
 void	ft_putstack(t_stack *stack)
 {
 	while (stack)

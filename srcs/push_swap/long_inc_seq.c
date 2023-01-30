@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lis.c                                              :+:      :+:    :+:   */
+/*   long_inc_seq.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nradin <nradin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 18:47:25 by nradin            #+#    #+#             */
-/*   Updated: 2023/01/21 14:45:21 by nradin           ###   ########.fr       */
+/*   Updated: 2023/01/25 13:28:27 by nradin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	search_replace(int *lis, int left, int right, int key)
 	return (mid + 1);
 }
 
-int	*lis_sub(int size, int lis_length, int *arr, int *index)
+static int	*lis_sub(int size, int lis_length, int *arr, int *index)
 {
 	int	i;
 	int	tmp;
@@ -59,7 +59,7 @@ int	*lis_sub(int size, int lis_length, int *arr, int *index)
 	return (answer);
 }
 
-int	*get_lis(int *arr, int size, int *lis_size)
+static int	*get_lis(int *arr, int size, int *lis_size)
 {
 	int	i;
 	int	lis_length;
@@ -88,7 +88,7 @@ int	*get_lis(int *arr, int size, int *lis_size)
 	return (answer);
 }
 
-int	int_in_arr(int n, int *arr, int size)
+static int	int_in_arr(int n, int *arr, int size)
 {
 	int	i;
 

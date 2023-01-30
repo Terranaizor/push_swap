@@ -6,13 +6,13 @@
 /*   By: nradin <nradin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 14:11:48 by nradin            #+#    #+#             */
-/*   Updated: 2023/01/24 11:04:07 by nradin           ###   ########.fr       */
+/*   Updated: 2023/01/25 12:43:42 by nradin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_gnl(const char *s)
 {
 	size_t	i;
 
@@ -22,13 +22,13 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	char	*s3;
 	size_t	i;
 	size_t	j;
 
-	s3 = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	s3 = (char *)malloc(ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1);
 	if (s3 == NULL)
 		return (NULL);
 	i = 0;
@@ -50,14 +50,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s3);
 }
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr_gnl(const char *s, int c)
 {
 	size_t	i;
 	size_t	size;
 
 	if (!s)
 		return (NULL);
-	size = ft_strlen(s);
+	size = ft_strlen_gnl(s);
 	i = size;
 	while (i <= size)
 	{
@@ -68,21 +68,21 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr_gnl(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
 
 	if (len == 0)
 		return (NULL);
-	if (len < ft_strlen(s + start))
+	if (len < ft_strlen_gnl(s + start))
 		sub = (char *)malloc(len + 1);
 	else
-		sub = (char *)malloc(ft_strlen(s + start) + 1);
+		sub = (char *)malloc(ft_strlen_gnl(s + start) + 1);
 	if (sub == NULL)
 		return (NULL);
 	i = 0;
-	if (start < ft_strlen(s))
+	if (start < ft_strlen_gnl(s))
 	{
 		while (*(s + start + i) && i < len)
 		{
